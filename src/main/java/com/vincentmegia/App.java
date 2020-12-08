@@ -1,14 +1,23 @@
 package com.vincentmegia;
 
+import java.time.Duration;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+
 /**
  * Hello world!
  *
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static void main( String[] args ) {
+        var start = LocalTime.now();
+        for (var i = 0; i < 1000000; i++) {
+//            System.out.println("i: " + i);
+        }
+        var end = LocalTime.now();
+        var diff = Duration.between(start, end);
+        System.out.println(diff.toNanos());
     }
 
     static String encryption(String s) {
